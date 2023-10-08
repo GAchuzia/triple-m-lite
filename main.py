@@ -10,6 +10,20 @@ def menu():
     if menu_input == "T":
         times_tables()
 
+def addition():
+    pass
+
+def subtraction():
+    pass
+
+def multiplication():
+    pass
+
+def division():
+    pass
+
+def question_range():
+    pass
 def times_tables():
 
     for left_operator in range (2, 13):
