@@ -7,12 +7,35 @@ def menu():
         os.system("cls")
         print(f"Range: [() to ()] {operation_sign} [() to ()]")
         while True:
-            range_input = input("Enter left operand range as (a,b): ")
-            range_a, range_b =  map(int, range_input.split(","))
-            range_input = input("Enter right operand range as (c,d): ")
-            range_c, range_d =  map(int, range_input.split(","))
-            num_questions = int(input("Number of questions: "))
-            range_input = input(f"Range: [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N)")
+            range_input = input("Enter left operand range as a,b: ")
+            if range_input == 'Q':
+                return  # Quit the operation
+            try:
+                range_a, range_b = map(int, range_input.split(","))
+            except ValueError:
+                print("Invalid input. Please enter a valid range as a,b or 'Q' to quit.")
+                continue
+
+            range_input = input("Enter right operand range as c,d: ")
+            if range_input == 'Q':
+                return  # Quit the operation
+            try:
+                range_c, range_d = map(int, range_input.split(","))
+            except ValueError:
+                print("Invalid input. Please enter a valid range as c,d or 'Q' to quit.")
+                continue
+
+            num_questions = input("Number of questions: ")
+            if num_questions == 'Q':
+                return  # Quit the operation
+            try:
+                num_questions = int(num_questions)
+            except ValueError:
+                print("Invalid input. Please enter a valid number of questions.")
+                continue
+
+            range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ")
+
 
             if range_input == "Y":
                 if operation_sign == "+":
@@ -25,10 +48,10 @@ def menu():
                     multiplication(range_a, range_b, range_c, range_d, operation_sign, num_questions)  
                 elif operation_sign == "/":
                     division(range_a, range_b, range_c, range_d, operation_sign, num_questions)
-            elif range_input == "N":
-                break  
+            if range_input == "N":
+                return  
             if range_input == "Q":
-                return
+                break
             
     menu_list = ["A", "S", "M", "D", "T"]
     ttable = 0
@@ -50,7 +73,7 @@ def menu():
         ttable = 1
     
 def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
-     for _ in range(num_questions):  # Limit the number of questions
+    for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
         answer = str(left_operator + right_operator)
@@ -64,9 +87,10 @@ def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
                 break
             elif tt_input == "Q":
                 return
+    menu()
 
 def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_questions):
-     for _ in range(num_questions):  # Limit the number of questions
+    for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
         answer = str(left_operator - right_operator)
@@ -80,6 +104,7 @@ def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_question
                 break
             elif tt_input == "Q":
                 return
+    menu()
 
 def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_questions):
     for _ in range(num_questions):  # Limit the number of questions
@@ -96,12 +121,13 @@ def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_quest
                 break
             elif tt_input == "Q":
                 return
+    menu()
 
 def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
     for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
-        answer = str(left_operator / right_operator)
+        answer = str(int(left_operator / right_operator))
         os.system('cls')
         print("Division\nPress Q to quit\n")
 
@@ -112,6 +138,7 @@ def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
                 break
             elif tt_input == "Q":
                 return
+    menu()
 
 def times_tables():
     for left_operator in range(2, 13):
