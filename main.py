@@ -1,4 +1,5 @@
 import os
+import time
 import random
 
 def menu():
@@ -41,6 +42,9 @@ def menu():
                 print("Invalid input. Please enter a valid number of questions.")
                 continue
 
+            if range_a > range_b or range_c > range_d or num_questions < 0:
+                input("Invalid response. Press enter and retype your inputs. ")
+                question_range(operation_sign)
             range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ")
             if range_input == 'Q':
                 exit() 
@@ -62,7 +66,7 @@ def menu():
                 elif operation_sign == "/":
                     division(range_a, range_b, range_c, range_d, operation_sign, num_questions)
             if range_input == "N":
-                break  
+                question_range(operation_sign) 
             if range_input == "Q":
                 exit()
             if range_input == "B":
