@@ -46,7 +46,7 @@ def menu():
                 input("Invalid response. Press enter and retype your inputs. ")
                 question_range(operation_sign)
 
-            range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ").upper
+            range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ").upper()
             
             if range_input == 'Q' or range_input == 'q':
                 exit() 
@@ -106,28 +106,35 @@ def menu():
         help_menu()
     if menu_input == "B":
         menu()
-
-    
+   
 def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
+    score = 0
+    total_attempts = 0
     for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
         answer = str(left_operator + right_operator)
+        
         os.system('cls')
-        print("Addition\nPress Q to quit\n")
+        print(f"Addition Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
 
         while True:
             user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
             if user_input == answer:
+                score += 1
+                os.system('cls')
+                print(f"Addition Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
                 break
             elif user_input == "Q" or user_input == 'q':
                 exit()
             elif user_input == "B" or user_input == 'b':
                 menu()
             else:
+                total_attempts += 1
                 os.system('cls')
-                print("Addition\nPress Q to quit\n")
+                print(f"Addition Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
+                
     menu()
 
 def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_questions):
