@@ -57,8 +57,6 @@ def menu():
                     addition(range_a, range_b, range_c, range_d, operation_sign, num_questions)
                 elif operation_sign == "-":
                     subtraction(range_a, range_b, range_c, range_d, operation_sign, num_questions)
-                elif ttable == 1:
-                    times_tables(range_a, range_b, range_c, range_d, operation_sign, num_questions) 
                 elif operation_sign == "*":
                     multiplication(range_a, range_b, range_c, range_d, operation_sign, num_questions)  
                 elif operation_sign == "/":
@@ -82,10 +80,9 @@ def menu():
         if help_menu_input == "B":
             menu()
 
-    menu_list = ["A", "S", "M", "D", "T", "Q", "H"]
-    ttable = 0
+    menu_list = ["A", "S", "M", "D", "Q", "H"]
     os.system("cls")
-    print("""Mental Math Monster (Triple-M-Lite) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(T) Times-tables \n(H) Help\n """)
+    print("""Mental Math Monster (Triple-M-Lite) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(H) Help\n """)
     menu_input = input("Input: ")
     while menu_input not in menu_list:
         menu_input = input("Select a valid input:")
@@ -97,9 +94,6 @@ def menu():
         question_range("*")
     if menu_input == "D":
         question_range("/")
-    if menu_input == "T":
-        question_range("*")
-        ttable = 1
     if menu_input == "Q":
         exit()
     if menu_input == "H":
@@ -187,24 +181,6 @@ def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
                 os.system('cls')
                 print("Division\nPress Q to quit\n")
     menu()
-
-def times_tables():
-    for left_operator in range(2, 13):
-        for right_operator in range(2, 13):
-            answer = str(left_operator * right_operator)
-            os.system('cls')
-            print("Times-tables\nPress Q to quit\n")
-
-            while True:
-                tt_input = input(f"{left_operator} * {right_operator} = ")
-
-                if tt_input == answer:
-                    break
-                elif tt_input == "Q":
-                    return
-                else:
-                    os.system('cls')
-                    print("Times-tables\nPress Q to quit\n")
 
 
 if __name__ == '__main__':
