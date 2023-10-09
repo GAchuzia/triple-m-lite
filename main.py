@@ -91,7 +91,7 @@ def menu():
     print("""Mental Math Monster (Triple-M-Lite) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(H) Help\n """)
     menu_input = input("Input: ").upper()
     while menu_input not in menu_list:
-        menu_input = input("Select a valid input:")
+        menu_input = input("Select a valid input:").upper()
     if menu_input == "A":
         question_range("+")
     if menu_input == "S":
