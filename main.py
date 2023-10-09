@@ -123,6 +123,7 @@ def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
 
             if user_input == answer:
                 score += 1
+                total_attempts += 1
                 os.system('cls')
                 print(f"Addition Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
                 break
@@ -134,73 +135,101 @@ def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
                 total_attempts += 1
                 os.system('cls')
                 print(f"Addition Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
-                
+    os.system('cls')
+    print(input(f"Category: Addition  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
     menu()
 
 def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_questions):
+    score = 0
+    total_attempts = 0
     for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
         answer = str(left_operator - right_operator)
         os.system('cls')
-        print("Subtraction\nPress Q to quit\n")
+        print(f"Subtraction Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
 
         while True:
             user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
             if user_input == answer:
+                score += 1
+                total_attempts += 1
+                os.system('cls')
+                print(f"Subtraction Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
                 break
             elif user_input == "Q" or user_input == 'q':
                 exit()
             elif user_input == "B" or user_input == 'b':
                 menu()
             else:
+                total_attempts += 1
                 os.system('cls')
-                print("Subtraction\nPress Q to quit\n")
+                print(f"Subtraction Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
+    os.system('cls')
+    print(input(f"Category: Subtraction  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
     menu()
 
 def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_questions):
+    score = 0
+    total_attempts = 0
     for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
         answer = str(left_operator * right_operator)
         os.system('cls')
-        print("Multiplication\nPress Q to quit\n")
+        print(f"Multiplication Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
 
         while True:
             user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
             if user_input == answer:
+                score += 1
+                total_attempts += 1
+                os.system('cls')
+                print(f"Multiplication Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
                 break
             elif user_input == "Q" or user_input == 'q':
                 exit()
             elif user_input == "B" or user_input == 'b':
                 menu()
             else:
+                total_attempts += 1
                 os.system('cls')
-                print("Multiplication\nPress Q to quit\n")
+                print(f"Multiplication Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
+    os.system('cls')
+    print(input(f"Category: Multiplication  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
     menu()
 
 def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
+    score = 0
+    total_attempts = 0
     for _ in range(num_questions):  # Limit the number of questions
         left_operator = random.randint(range_a, range_b)
         right_operator = random.randint(range_c, range_d)
         answer = str(int(left_operator / right_operator))
         os.system('cls')
-        print("Division\nPress Q to quit\n")
+        print(f"Division Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
 
         while True:
             user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
             if user_input == answer:
+                score += 1
+                total_attempts += 1
+                os.system('cls')
+                print(f"Division Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
                 break
             elif user_input == "Q" or user_input == 'q':
                 exit()
             elif user_input == "B" or user_input == 'b':
                 menu()
             else:
+                total_attempts += 1
                 os.system('cls')
-                print("Division\nPress Q to quit\n")
+                print(f"Division Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
+    os.system('cls')
+    print(input(f"Category: Division  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
     menu()
 
 
