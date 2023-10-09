@@ -1,4 +1,4 @@
-# Double-M
+# Triple-M-Lite
 
 Practice your mental math skills in the terminal
 

@@ -72,7 +72,7 @@ def menu():
     
     def help_menu():
         os.system('cls')
-        print("Mental Math (Double-M)\nPress 'Q' to quit the game and 'B' to go back to the main menu.\n")
+        print("Mental Math (Triple-M-Lite)\nPress 'Q' to quit the game and 'B' to go back to the main menu.\n")
         help_menu_input = input("Input: ")
         help_menu_list = ["Q", "B"]
         while help_menu_input not in help_menu_list:
@@ -85,7 +85,7 @@ def menu():
     menu_list = ["A", "S", "M", "D", "T", "Q", "H"]
     ttable = 0
     os.system("cls")
-    print("""Mental Math (Double-M) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(T) Times-tables \n(H) Help\n """)
+    print("""Mental Math (Triple-M-Lite) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(T) Times-tables \n(H) Help\n """)
     menu_input = input("Input: ")
     while menu_input not in menu_list:
         menu_input = input("Select a valid input:")
