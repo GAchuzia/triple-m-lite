@@ -7,9 +7,12 @@ def menu():
         os.system("cls")
         print(f"Range: [() to ()] {operation_sign} [() to ()]")
         while True:
+            
             range_input = input("Enter left operand range as a,b: ")
             if range_input == 'Q':
-                exit() # Quit the operation
+                exit() 
+            elif range_input == "B":
+                menu()
             try:
                 range_a, range_b = map(int, range_input.split(","))
             except ValueError:
@@ -18,7 +21,9 @@ def menu():
 
             range_input = input("Enter right operand range as c,d: ")
             if range_input == 'Q':
-                exit() # Quit the operation
+                exit() 
+            elif range_input == "B":
+                menu()
             try:
                 range_c, range_d = map(int, range_input.split(","))
             except ValueError:
@@ -27,7 +32,9 @@ def menu():
 
             num_questions = input("Number of questions: ")
             if num_questions == 'Q':
-                exit()  # Quit the operation
+                exit()  
+            elif range_input == "B":
+                menu()
             try:
                 num_questions = int(num_questions)
             except ValueError:
@@ -36,7 +43,9 @@ def menu():
 
             range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ")
             if range_input == 'Q':
-                exit() # Quit the operation
+                exit() 
+            elif range_input == "B":
+                menu()
             try:
                 num_questions = int(num_questions)
             except ValueError:
@@ -55,10 +64,24 @@ def menu():
                 elif operation_sign == "/":
                     division(range_a, range_b, range_c, range_d, operation_sign, num_questions)
             if range_input == "N":
-                return  
+                break  
             if range_input == "Q":
                 exit()
-            
+            if range_input == "B":
+                menu()
+    
+    def help_menu():
+        os.system('cls')
+        print("Mental Math (Double-M)\nPress 'Q' to quit the game and 'B' to go back to the main menu.\n")
+        help_menu_input = input("Input: ")
+        help_menu_list = ["Q", "B"]
+        while help_menu_input not in help_menu_list:
+            menu_input = input("Select a valid input:")
+        if help_menu_input == "Q":
+            exit()
+        if help_menu_input == "B":
+            menu()
+
     menu_list = ["A", "S", "M", "D", "T", "Q", "H"]
     ttable = 0
     os.system("cls")
@@ -79,6 +102,10 @@ def menu():
         ttable = 1
     if menu_input == "Q":
         exit()
+    if menu_input == "H":
+        help_menu()
+    if menu_input == "B":
+        menu()
 
     
 def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
