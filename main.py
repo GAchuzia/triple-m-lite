@@ -9,7 +9,7 @@ def menu():
         while True:
             range_input = input("Enter left operand range as a,b: ")
             if range_input == 'Q':
-                return  # Quit the operation
+                exit() # Quit the operation
             try:
                 range_a, range_b = map(int, range_input.split(","))
             except ValueError:
@@ -18,7 +18,7 @@ def menu():
 
             range_input = input("Enter right operand range as c,d: ")
             if range_input == 'Q':
-                return  # Quit the operation
+                exit() # Quit the operation
             try:
                 range_c, range_d = map(int, range_input.split(","))
             except ValueError:
@@ -27,7 +27,7 @@ def menu():
 
             num_questions = input("Number of questions: ")
             if num_questions == 'Q':
-                return  # Quit the operation
+                exit()  # Quit the operation
             try:
                 num_questions = int(num_questions)
             except ValueError:
@@ -35,7 +35,13 @@ def menu():
                 continue
 
             range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ")
-
+            if range_input == 'Q':
+                exit() # Quit the operation
+            try:
+                num_questions = int(num_questions)
+            except ValueError:
+                print("Invalid input. Please enter a valid response.")
+                continue
 
             if range_input == "Y":
                 if operation_sign == "+":
@@ -51,12 +57,12 @@ def menu():
             if range_input == "N":
                 return  
             if range_input == "Q":
-                break
+                exit()
             
-    menu_list = ["A", "S", "M", "D", "T"]
+    menu_list = ["A", "S", "M", "D", "T", "Q", "H"]
     ttable = 0
     os.system("cls")
-    print("""Mental Math (Double-M) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(T) Times-tables """)
+    print("""Mental Math (Double-M) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(T) Times-tables \n(H) Help\n """)
     menu_input = input("Input: ")
     while menu_input not in menu_list:
         menu_input = input("Select a valid input:")
@@ -71,6 +77,9 @@ def menu():
     if menu_input == "T":
         question_range("*")
         ttable = 1
+    if menu_input == "Q":
+        exit()
+
     
 def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
     for _ in range(num_questions):  # Limit the number of questions
@@ -81,12 +90,15 @@ def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
         print("Addition\nPress Q to quit\n")
 
         while True:
-            tt_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
+            user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
-            if tt_input == answer:
+            if user_input == answer:
                 break
-            elif tt_input == "Q":
-                return
+            elif user_input == "Q":
+                exit()
+            else:
+                os.system('cls')
+                print("Addition\nPress Q to quit\n")
     menu()
 
 def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_questions):
@@ -98,12 +110,15 @@ def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_question
         print("Subtraction\nPress Q to quit\n")
 
         while True:
-            tt_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
+            user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
-            if tt_input == answer:
+            if user_input == answer:
                 break
-            elif tt_input == "Q":
-                return
+            elif user_input == "Q":
+                exit()
+            else:
+                os.system('cls')
+                print("Subtraction\nPress Q to quit\n")
     menu()
 
 def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_questions):
@@ -115,12 +130,15 @@ def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_quest
         print("Multiplication\nPress Q to quit\n")
 
         while True:
-            tt_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
+            user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
-            if tt_input == answer:
+            if user_input == answer:
                 break
-            elif tt_input == "Q":
-                return
+            elif user_input == "Q":
+                exit()
+            else:
+                os.system('cls')
+                print("Multiplication\nPress Q to quit\n")
     menu()
 
 def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
@@ -132,12 +150,15 @@ def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
         print("Division\nPress Q to quit\n")
 
         while True:
-            tt_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
+            user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
 
-            if tt_input == answer:
+            if user_input == answer:
                 break
-            elif tt_input == "Q":
-                return
+            elif user_input == "Q":
+                exit()
+            else:
+                os.system('cls')
+                print("Division\nPress Q to quit\n")
     menu()
 
 def times_tables():
