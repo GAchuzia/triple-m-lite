@@ -43,7 +43,7 @@ def menu():
                 continue
 
             if range_a > range_b or range_c > range_d or num_questions < 0:
-                input("Invalid response. Press enter and retype your inputs. ")
+                input("Invalid response. Press retype your inputs. ")
                 question_range(operation_sign)
 
             range_input = input(f"Range - [{range_a} to {range_b}] {operation_sign} [{range_c} to {range_d}] for {num_questions} questions (Y/N): ").upper()
@@ -86,12 +86,14 @@ def menu():
         if help_menu_input == "B":
             menu()
 
-    menu_list = ["A", "S", "M", "D", "Q", "H"]
+    menu_list = ["A", "S", "M", "D", "Q", "H", "B"]
     os.system("cls")
     print("""Mental Math Monster (Triple-M-Lite) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(H) Help\n """)
     menu_input = input("Input: ").upper()
     while menu_input not in menu_list:
         menu_input = input("Select a valid input:").upper()
+    while menu_input == "B":
+        menu_input = input("You're as far back as you can go, selct another input: ").upper()
     if menu_input == "A":
         question_range("+")
     if menu_input == "S":
@@ -104,8 +106,7 @@ def menu():
         exit()
     if menu_input == "H":
         help_menu()
-    if menu_input == "B":
-        menu()
+        
    
 def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
     score = 0
