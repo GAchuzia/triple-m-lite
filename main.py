@@ -137,7 +137,7 @@ def addition(range_a, range_b, range_c, range_d, operation_sign, num_questions):
                 os.system('cls')
                 print(f"Addition Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
     os.system('cls')
-    print(input(f"Category: Addition  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
+    print(input(f"Category: Addition\nTotal Score: {score}\nTotal Attempts: {total_attempts}\n"))            
     menu()
 
 def subtraction(range_a, range_b, range_c, range_d, operation_sign, num_questions):
@@ -179,7 +179,7 @@ def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_quest
         right_operator = random.randint(range_c, range_d)
         answer = str(left_operator * right_operator)
         os.system('cls')
-        print(f"Multiplication Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
+        print(f"Multiplication Practice\nScore: {score}\nTotal Attempts: {total_attempts}\n")
 
         while True:
             user_input = input(f"{left_operator} {operation_sign} {right_operator} = ")
@@ -199,7 +199,7 @@ def multiplication(range_a, range_b, range_c, range_d, operation_sign, num_quest
                 os.system('cls')
                 print(f"Multiplication Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
     os.system('cls')
-    print(input(f"Category: Multiplication  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
+    print(input(f"Category: Multiplication\nTotal Score: {score}\nTotal Attempts: {total_attempts}\n"))            
     menu()
 
 def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
@@ -230,7 +230,7 @@ def division(range_a, range_b, range_c, range_d, operation_sign, num_questions):
                 os.system('cls')
                 print(f"Division Practice  |  Score: {score}  |  Total Attempts: {total_attempts}")
     os.system('cls')
-    print(input(f"Category: Division  |  Total Score: {score}  |  Total Attempts: {total_attempts}"))            
+    print(input(f"Category: Division\nTotal Score: {score}\nTotal Attempts: {total_attempts}\n"))            
     menu()
 
 
