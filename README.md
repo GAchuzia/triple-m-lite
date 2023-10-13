@@ -2,4 +2,4 @@
 
 Practice your mental math skills in the terminal
 
-This is a (very slow) work in progress.
+<img src="triple-m-lite.gif" alt="" width="400" height="200">
