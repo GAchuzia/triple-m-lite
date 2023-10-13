@@ -2,7 +2,7 @@
 
 Practice your mental math skills in the terminal.
 
-<img src="triple-m-vid.gif" alt="" width="400" height="200">
+<img src="triple-m-vid.gif" alt="" width="800" height="400">
 
 ## Usage
 - Clone the repository 
