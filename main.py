@@ -21,6 +21,7 @@ def menu():
             try:
                 range_a, range_b = map(int, range_input.split(","))
             except ValueError:
+                os.system('cls')
                 print("Invalid input. Please enter a valid range as a,b or 'Q' to quit.")
                 continue
 
@@ -32,6 +33,7 @@ def menu():
             try:
                 range_c, range_d = map(int, range_input.split(","))
             except ValueError:
+                os.system('cls')
                 print("Invalid input. Please enter a valid range as c,d or 'Q' to quit.")
                 continue
 
@@ -43,6 +45,7 @@ def menu():
             try:
                 num_questions = int(num_questions)
             except ValueError:
+                os.system('cls')
                 print("Invalid input. Please enter a valid number of questions.")
                 continue
 
@@ -59,6 +62,7 @@ def menu():
             try:
                 num_questions = int(num_questions)
             except ValueError:
+                os.system('cls')
                 print("Invalid input. Please enter a valid response.")
                 continue
 
@@ -77,6 +81,10 @@ def menu():
                 exit()
             if range_input == "B" or range_input == 'b':
                 menu()
+            else:
+                os.system('cls')
+                print("Invalid input. Please enter a valid response.")
+                continue
     
     def help_menu():
         os.system('cls')
