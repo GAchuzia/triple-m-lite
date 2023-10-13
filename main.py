@@ -2,6 +2,10 @@ import os
 import time
 import random
 
+GREEN = '\033[92m'
+BLUE = '\033[94m'
+RESET = '\033[0m'
+
 def menu():
 
     def question_range(operation_sign):
@@ -76,11 +80,11 @@ def menu():
     
     def help_menu():
         os.system('cls')
-        print("Mental Math Monster (Triple-M-Lite)\nPress 'Q' to quit the game and 'B' to go back to the main menu.\n")
+        print(f"Mental Math Monster ({GREEN}Triple-M-{BLUE}Lite{RESET})\nPress 'Q' to quit the game and 'B' to go back to the main menu.\n")
         help_menu_input = input("Input: ").upper()
         help_menu_list = ["Q", "B"]
         while help_menu_input not in help_menu_list:
-            menu_input = input("Select a valid input:").upper()
+            help_menu_input = input("Select a valid input:").upper()
         if help_menu_input == "Q":
             exit()
         if help_menu_input == "B":
@@ -88,8 +92,8 @@ def menu():
 
     menu_list = ["A", "S", "M", "D", "Q", "H", "B"]
     os.system("cls")
-    print("""Mental Math Monster (Triple-M-Lite) \n(A) Addition\n(S) Subtraction\n(M) Multiplication\n(D) Division\n(H) Help\n """)
-    menu_input = input("Input: ").upper()
+    print(f"""Mental Math Monster ({GREEN}Triple-M-{BLUE}Lite{RESET}) \n{GREEN}(A){RESET} {BLUE}Addition\n{GREEN}(S){RESET} {BLUE}Subtraction\n{GREEN}(M){RESET} {BLUE}Multiplication\n{GREEN}(D){RESET} {BLUE}Division\n{GREEN}(H){RESET} {BLUE}Help{RESET}\n """)
+    menu_input = input(f"Input: ").upper()
     while menu_input not in menu_list:
         menu_input = input("Select a valid input:").upper()
     while menu_input == "B":
